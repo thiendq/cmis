@@ -1,0 +1,57 @@
+<style>
+    /* Style table */
+    #father {
+        border: 1px solid #333;
+        width: 400px;
+        ;
+        overflow: auto;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid #ccc;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 1400px;
+    }
+
+    th,
+    td {
+        text-align: right;
+        padding: 10px;
+
+    }
+</style>
+<div id="father">
+    <table>
+        <tr>
+            <th>Ma don vi</th>
+            <th>Thuong pham</th>
+            <th>Tong tien</th>
+            <th>Tien dien</th>
+            <th>Tien thue</th>
+            <th>Gia binh quan</th>
+            <th>Tong thue</th>
+            <th>Tien thue</th>
+            <th>Tien CSPK thue</th>
+            <th>Doanh thu</th> 
+
+        </tr>
+        <tr *ngFor="let item of outJson">
+            <td>{{item.MA_DVIQLY}}</td>
+            <td >{{item.TD_SL}}</td>
+            <td >{{item.TCONG_TIEN}}</td>
+            <td >{{item.TD_SOTIEN}}</td>
+            <td >{{item.VC_SOTIEN}}</td>
+            <td >{{item.GIABQ}}</td>
+            <td >{{item.TCONG_THUE}}</td>
+            <td >{{item.TD_GTGT}}</td>
+            <td >{{item.VC_GTGT}}</td>
+            <td >{{item.TONG_CONG}}</td> 
+        </tr>
+
+    </table>
+</div>

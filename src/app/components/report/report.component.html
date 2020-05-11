@@ -1,0 +1,448 @@
+<!-- <p>report works!</p> -->
+<style>
+#site {
+    position: relative;
+    overflow: hidden;
+}
+#wrapper {
+    width: 960px; 
+    margin: 0px auto;
+    position: relative;
+    left: 0px;
+    transition: left 0.25s;
+}
+#header {
+    position: relative;
+    text-align: center;
+}
+#header, #footer { 
+    padding: 15px 10px;
+  /*  background: gray; */
+    background: rgb(15,72,116);
+}
+#logo {
+   display: block;
+   float: left;
+    /* float: left; */
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    padding: 5px;
+}
+ul {
+    list-style: none;
+    }
+a {
+    color: whitesmoke!important;
+    /* font-family: Roboto!important; */
+}    
+#icon-menu-responsive {
+    display: none;
+    color: #f5f5f5;
+    font-size: 20px;
+    position: absolute;
+    left: 20px;
+    top: 21px;
+    cursor: pointer;
+}
+#wp-respon-menu {
+    /* display: none; */
+    position: absolute;
+    /* background: #444; */
+    background: rgb(44, 87, 121);
+   /* tinh theo cah cu */
+    /* width: 150px; */
+    width: 75%;;
+    color: #f5f5f5;
+    top: 0px;
+    /* theo cach cu */
+    /* left: -150px; */
+    left: -75%;
+    height: 100%;
+    transition: left 0.25s;
+}
+#wp-respon-menu h1 {
+    padding: 20px 0px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: medium;
+    margin-bottom: 5px;
+    border-bottom: 5px solid burlywood;
+}
+ul#respon-menu {
+    width: 100%;
+    left: 0px;
+    padding: 0px;
+    margin-left: 3px
+}
+ul#respon-menu li a {
+    display: block;
+    padding: 5px 5px;  
+    color: #cecece;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-decoration: none;
+    /* border-top: 1px solid #716f6f; */
+}
+ul#main-menu {
+    float: right;    
+}
+ul#main-menu li {
+    float: left;
+}
+ul#main-menu li a {
+    display: block;
+    padding: 5px 18px;
+    color: #cecece;
+    text-decoration: none;
+}
+ul#main-menu li:hover a {
+text-decoration: none;
+}
+#content, #sidebar {
+    min-height: 600px;
+    padding: 10px;
+}
+#content {
+    float: left;
+    background: #f5f5f5;
+    width: 100%;
+}
+#sidebar {
+    float: right;
+    background: #d5d5d5;
+    width: 30%;
+}
+/* Menu Respon */
+#site.open-respon-menu #wrapper {
+   /* theo cach cu tinh theo px */
+    /* left: 150px; */
+    left: 75%;
+    transition: left 0.25s;
+    }
+#site.open-respon-menu #wp-respon-menu {
+    left: 0px;
+    transition: left 0.25s;
+}
+/* Dropdown container - needed to position the dropdown content */
+.dropdown {
+    float: left;
+    overflow: hidden;
+    transition: left 0.25s;
+  }
+.drop {
+    position: relative;
+} 
+#icon-drop {
+    /* position: absolute; */
+    float: right;
+    right: 10px;
+    padding: 0px 15px;
+    margin-top: -24px;
+} 
+/* Style the dropdown button to fit inside the topnav */
+.dropdown .dropbtn {
+    font-size: 17px;
+    border-width: 1px;
+    /* border: none; */
+    outline: none;
+    color: white;
+    padding: 7px 4px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  /* Style the dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);   
+    /* z-index: 1; */
+  }
+  
+  /* Style the links inside the dropdown */
+  .dropdown-content a {
+    float: left;
+    color: whitesmoke;
+    padding: 3px 18px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-family: Roboto!important;
+    /* border-top: 1px solid #716f6f;
+    border-bottom: 1px solid #716f6f; */
+    background: rgb(44, 87, 121);;
+    width: 100%;
+  }
+  /* Show the dropdown menu when the user moves the mouse over the dropdown button */
+.dropdown:hover .dropdown-content {
+    display: block;
+    transition: left 0.25s;
+  }
+  #site.open-respon-menu #wp-respon-menu ul#respon-menu .dropdown {
+    float: none;
+    transition: left 0.25s;
+  }
+  #site.open-respon-menu #wp-respon-menu ul#respon-menu .dropdown-content {
+    position: relative;
+    margin: 0px -10px 0px 10px;
+    /* transition: left 0.25s; */
+  }
+  #site.open-respon-menu #wp-respon-menu ul#respon-menu .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding-bottom: 10px;
+    font-family: Roboto!important;
+    /* transition: left 0.25s; */
+  }
+  #site.open-respon-menu #wp-respon-menu ul#respon-menu .dropdown .dropdown-content a {
+    width: 95%;
+    padding: 12px 10px;
+    /* margin: 1px 2px 1px -3px; */
+
+    /* transition: left 0.25s; */
+  }
+/* Style table */
+#father{
+    border:1px solid #333;
+    width:100%;
+    overflow:auto;
+}
+table, th, td{
+    border:1px solid #ccc;
+}
+table{
+    border-collapse:collapse;
+    width:550px;
+}
+th, td{
+    text-align:left;
+    padding:10px;
+}
+
+@media screen and (max-width: 1024px) {
+    #wrapper {width: 100%;}
+}
+@media screen and (max-width: 768px) {
+    #logo {
+        display: inline-block;
+        float: none;
+    }
+    #main-menu {display: none;}
+    #icon-menu-responsive {display: block;}
+}
+@media screen and (max-width: 480px) {
+    #content, #sidebar {width: 100%}
+} 
+</style>
+<div id="site">
+    <div id="wrapper">
+        <div id="header" class="clearfix">
+            <a href="" id="logo">Logo</a>
+            <ul id="main-menu" class="">
+                <li><a href="">Trang chu</a></li>
+                <li><a href="">Bao cao</a></li>
+            </ul>
+            <!-- Menu Respon -->
+            <a id="icon-menu-responsive" class="fa fa-bars"></a>
+            <!-- Het Respon -->
+        </div>
+        <div id="wp-content" class="clearfix">
+            <div id="content">
+                <!-- <div id="father">
+                    <table>
+                        <tr>
+                            <th>STT</th>
+                            <th>Họ tên</th>
+                            <th>Ngày sinh</th>
+                            <th>Giới tính</th>
+                            <th>Quê quán</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Trần Anh Đức</td>
+                            <td>03/08/1993</td>
+                            <td>Nam</td>
+                            <td>Cần Thơ</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Kiều Thị Thu Hằng</td>
+                            <td>04/09/1991</td>
+                            <td>Nữ</td>
+                            <td>Vĩnh Long</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Vương Thị Lê Na</td>
+                            <td>06/10/1991</td>
+                            <td>Nữ</td>
+                            <td>Sóc Trăng</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Dương Kim Thương</td>
+                            <td>16/11/1990</td>
+                            <td>Nam</td>
+                            <td>Trà Vinh</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Mai Đức Hiếu</td>
+                            <td>18/06/1989</td>
+                            <td>Nam</td>
+                            <td>Hậu Giang</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Mai Đức Hiếu</td>
+                            <td>18/06/1989</td>
+                            <td>Nam</td>
+                            <td>Hậu Giang</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Mai Đức Hiếu</td>
+                            <td>18/06/1989</td>
+                            <td>Nam</td>
+                            <td>Hậu Giang</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Mai Đức Hiếu</td>
+                            <td>18/06/1989</td>
+                            <td>Nam</td>
+                            <td>Hậu Giang</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Mai Đức Hiếu</td>
+                            <td>18/06/1989</td>
+                            <td>Nam</td>
+                            <td>Hậu Giang</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Mai Đức Hiếu</td>
+                            <td>18/06/1989</td>
+                            <td>Nam</td>
+                            <td>Hậu Giang</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Mai Đức Hiếu</td>
+                            <td>18/06/1989</td>
+                            <td>Nam</td>
+                            <td>Hậu Giang</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Mai Đức Hiếu</td>
+                            <td>18/06/1989</td>
+                            <td>Nam</td>
+                            <td>Hậu Giang</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Mai Đức Hiếu</td>
+                            <td>18/06/1989</td>
+                            <td>Nam</td>
+                            <td>Hậu Giang</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Mai Đức Hiếu</td>
+                            <td>18/06/1989</td>
+                            <td>Nam</td>
+                            <td>Hậu Giang</td>
+                        </tr>
+                    </table>
+                </div> -->
+                <router-outlet></router-outlet>
+            </div>
+            <!-- <div id="sidebar">sidebar</div> -->
+        </div>
+        <div id="footer">Footer</div>
+    </div>        
+
+<!-- End wrapper -->
+<div id="wp-respon-menu">
+    <h1>menu chức năng</h1>
+    <ul id="respon-menu" class="">
+        <!-- <li><a href="">Trang chu</a></li>
+        <li><a href="">Bao cao</a></li> -->
+        <div id="id1" class="dropdown">
+            <!-- <button class="drop dropbtn">Dropdown -->
+               <div class="drop dropbtn">
+                <li><a routerLink="#">Báo cáo tổng hợp</a></li>
+                <i id="icon-drop" class="fa fa-caret-down"></i>
+               </div>
+            <!-- </button> -->
+            <div class="dropdown-content">
+              <!-- <a href="https://www.google.com.vn/">Link 1</a> -->
+              <a routerLink="/kd4a">Kinh doanh 4A</a>
+              <a routerLink="/kd4b">Kinh doanh 4B</a>              
+              <a routerLink="/Grid">Kinh doanh 6A</a>
+              <a href="#">Kinh doanh 7A</a>
+              <a href="#">Kinh doanh 8A</a>
+              <a routerLink="/charpower">Bieu do</a>
+            </div>
+          </div>
+
+          <!-- <div class="dropdown">
+            <button class="drop dropbtn">Dropdown
+              <i id="icon-drop" class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="https://www.google.com.vn/">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </div>   -->
+
+       <!-- Dropdown -->
+       <div id="id1" class="dropdown">
+        <!-- <button class="drop dropbtn">Dropdown -->
+           <div class="drop dropbtn">
+            <li><a routerLink="#">Điều hành thương phẩm</a></li>
+            <i id="icon-drop" class="fa fa-caret-down"></i>
+           </div>
+        <!-- </button> -->
+        <div class="dropdown-content">
+          <!-- <a href="https://www.google.com.vn/">Link 1</a> -->              
+          <a href="#">Điện nhận ngày</a>
+          <a href="#">Theo dõi điều hành sản lượng</a>
+          <a href="#">Biểu đồ điều hành sản lượng</a>
+        </div>
+      </div>
+      <div id="id1" class="dropdown">
+        <!-- <button class="drop dropbtn">Dropdown -->
+           <div class="drop dropbtn">
+            <li><a routerLink="#">Báo cáo doanh thu</a></li>
+            <i id="icon-drop" class="fa fa-caret-down"></i>
+           </div>
+        <!-- </button> -->
+        <div class="dropdown-content">
+          <!-- <a href="https://www.google.com.vn/">Link 1</a> -->
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+        <!-- <div class="dropdown">
+            <button class="drop dropbtn">Dropdown
+              <i id="icon-drop" class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="https://www.google.com.vn/">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </div> -->
+
+          <!-- het dropdown -->
+    </ul>
+</div>
+</div>

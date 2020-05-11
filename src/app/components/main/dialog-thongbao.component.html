@@ -1,0 +1,16 @@
+<h1 mat-dialog-title><strong>Chọn tháng năm báo cáo</strong></h1>
+<div mat-dialog-content>
+  <mat-form-field >
+    <input placeholder="Tháng báo cáo" matInput [(ngModel)]="local_data.THANG">
+  </mat-form-field>
+  <mat-form-field>
+    <input placeholder="Năm báo cáo" matInput [(ngModel)]="local_data.NAM">
+  </mat-form-field>
+  <!-- <ng-template #elseTemplate>
+    Sure to delete <b>{{local_data.name}}</b>?
+  </ng-template> -->
+</div>
+<mat-card-actions class="course-actions">
+  <button mat-button class="mat-raised-button mat-primary" mat-button (click)="doAction()" >Lưu</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Hủy</button>
+</mat-card-actions>
